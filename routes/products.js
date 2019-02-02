@@ -11,6 +11,18 @@ router.get('/', (req, res)=>{
       })
       .catch(e=>res.render('error'))
 })
+
+router.get('/new', (req, res) => {
+  res.render('products/form')
+})
+
+router.post('/new', (req, res) => {
+  Product.create(req.body)
+    .then(product=> {
+      res.redirect('/products/')
+    })
+    .catch(err=>res.render('error'))
+})
 //detalle
 
 //formulario

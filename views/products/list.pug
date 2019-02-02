@@ -5,4 +5,4 @@ block content
   each product in products
     -var productId = product._id
     div
-      a(href=`/products/detail/${productId}`) #{p.name}
+      a(href=`/products/detail/${productId}`) #{product.name}

@@ -12,7 +12,7 @@ const productSchema = new Schema({
   },
   category: {
     type: String,
-    enum: ['RECTANGULO', 'CIRCULO', 'TROQUELADO']
+    enum: ['CHIDOS', 'MÁS CHIDOS', 'SÚPER CHIDOS']
   },
   img: {
     type: String,

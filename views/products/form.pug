@@ -1,0 +1,18 @@
+extends ../layout.pug
+
+block content
+  form(action="/products/new", method="POST")
+    label(for="name") Nombre del producto
+      input#name(type="text", name="name", placeholder="Nombre")
+    label(for="desc") Descripción del producto
+      textarea#desc(name="desc", cols="30", rows="10", placeholder="k ase")
+    label(for="price") Precio
+      input#price(type="number", name="price", placeholder="$$$$")
+    label(for="img") Imagen
+      input#img(type="text", name="img", placeholder="URL de la imagen")
+    label(for="category") Categoría
+      select#category(name="category")
+        option(value="CHIDOS") CHIDOS
+        option(value="MÁS CHIDOS") MÁS CHIDOS
+        option(value="SÚPER CHIDOS") SÚPER CHIDOS
+    button(type="submit") Guardar producto
