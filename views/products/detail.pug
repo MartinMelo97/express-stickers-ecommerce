@@ -1,0 +1,9 @@
+extends ../layout.pug
+
+block content
+  h3= product.name
+  img(src=product.img, alt=product.name)
+  p= product.desc
+  p Categoría : #{product.category}
+
+  h1 $#{product.price}.00

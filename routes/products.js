@@ -12,6 +12,12 @@ router.get('/', (req, res)=>{
       .catch(e=>res.render('error'))
 })
 
+router.get('/detail/:id', (req, res) => {
+  Product.findById(req.params.id)
+    .then(product=>res.render('products/detail', {product}))
+    .catch(err=>res.render(err))
+})
+
 router.get('/new', (req, res) => {
   res.render('products/form')
 })
