@@ -1,7 +1,7 @@
 extends ../layout.pug
 
 block content
-  form(action="/products/new", method="POST")
+  form(action="/products/new", method="POST", style="display: flex; flex-direction: column; justify-content: space-around; align-items: center;")
     label(for="name") Nombre del producto
       input#name(type="text", name="name", placeholder="Nombre")
     label(for="desc") Descripción del producto
@@ -15,4 +15,10 @@ block content
         option(value="CHIDOS") CHIDOS
         option(value="MÁS CHIDOS") MÁS CHIDOS
         option(value="SÚPER CHIDOS") SÚPER CHIDOS
+    br
+    label(for="inOffer") ¿Está en Oferta?
+    input#inOffer(type="checkbox", name="inOffer")
+    input(type="text", name="offerPrice", placeholder="En caso de que exista oferta, colocar el precio")
+    label(for="inStock") ¿Existe en Stock?
+    input#inStock(type="checkbox", name="inStock")
     button(type="submit") Guardar producto

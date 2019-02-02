@@ -7,7 +7,7 @@ router.get('/', (req, res)=>{
       {inStock: true}
       )
       .then(products=>{
-        res.render('products/list', {products, search:false})
+        res.render('products/list', {products})
       })
       .catch(e=>res.render('error'))
 })
@@ -23,7 +23,11 @@ router.get('/new', (req, res) => {
 })
 
 router.post('/new', (req, res) => {
-  Product.create(req.body)
+  console.log(req.body)
+  const newProduct = new Product(req.body)
+  req.body.inOffer === 'on' ? newProduct.inOffer = true : null
+  req.body.inStock === 'on' ? newProduct.inStock = true : null
+  newProduct.save()
     .then(product=> {
       res.redirect('/products/')
     })
@@ -35,9 +39,14 @@ router.post('/search', (req, res) => {
   Product.find({name: {$regex: req.body.search, $options: "i"}})
     .then((products)=>{
       console.log(products)
-      res.render('products/list', {products, search: true})
+      res.render('products/list', {products, search: true, searched: req.body.search})
     })
     .catch((err)=>console.log(err))
+})
+
+router.post('/filter_by', (req, res) => {
+  Product.find({category: req.body.category})
+    .then((products)=>res.render('products/list', {products, filter: true, filtered: req.body.category}))
 })
 
 module.exports = router

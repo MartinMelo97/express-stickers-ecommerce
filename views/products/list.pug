@@ -2,7 +2,21 @@ extends ../layout.pug
 
 block content 
   h2 Stickets mexicanos
+  if search
+    h3 Resultados de la búsqueda #{searched}
+  if filter
+    h3 Resultados del filtro #{filtered}
   each product in products
     -var productId = product._id
     div
       a(href=`/products/detail/${productId}`) #{product.name}
+  
+  
+  h3 Filtrar por
+  form(action="/products/filter_by", method="get")
+    select(name="category")
+      option(value="CHIDOS") CHIDOS
+      option(value="MÁS CHIDOS") MÁS CHIDOS
+      option(value="SÚPER CHIDOS") SÚPER CHIDOS
+    
+    button(type="submit", value="Filtrar") Filtrar
