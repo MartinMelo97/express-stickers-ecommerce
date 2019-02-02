@@ -7,7 +7,7 @@ router.get('/', (req, res)=>{
       {inStock: true}
       )
       .then(products=>{
-        res.render('products/list', {products})
+        res.render('products/list', {products, search:false})
       })
       .catch(e=>res.render('error'))
 })
@@ -29,8 +29,15 @@ router.post('/new', (req, res) => {
     })
     .catch(err=>res.render('error'))
 })
-//detalle
 
-//formulario
+router.post('/search', (req, res) => {
+  console.log(req.body)
+  Product.find({name: {$regex: req.body.search, $options: "i"}})
+    .then((products)=>{
+      console.log(products)
+      res.render('products/list', {products, search: true})
+    })
+    .catch((err)=>console.log(err))
+})
 
 module.exports = router

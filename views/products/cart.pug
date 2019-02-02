@@ -1,0 +1,17 @@
+extends ../layout.pug
+
+block content
+  div(style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;")
+      h3 Nombre
+      h3 Imagen
+      h3 Precio Unitario
+      h3 Cantidad
+      h3 Subtotal
+  each product in products
+    div(style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;")
+      h4= product.product.name
+      img(src=product.product.img, alt=product.product.name, style="width: 100px; height: 100px;")
+      p $#{product.product.price}
+      p= product.quantity
+      p $#{product.subtotal}
+    

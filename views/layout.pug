@@ -7,8 +7,13 @@ html(lang="en")
     title Document
   body
     nav
-      a(href="/") Home | --
-      a(href="/products") Stickers | --
-      a(href="/products/new") Agregar sticker
+      a(href="/") Home | 
+      a(href="/products") Stickers | 
+      a(href="/products/new") Agregar sticker | 
+      a(href="/cart") Carrito
+
+      form(action="/products/search", method="post", style="display:flex")
+        input(type="search", name="search", placeholder="Buscar...")
+        input(type="submit", value="Buscar!")
     
     block content
