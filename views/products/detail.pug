@@ -1,16 +1,14 @@
 extends ../layout.pug
 
 block content
-  h3= product.name
-  img(src=product.img, alt=product.name)
-  p= product.desc
-  p Categoría : #{product.category}
-  if product.inOffer
-    h1 $#{product.offerPrice}.00
-  else
-    h1 $#{product.price}.00
-  p=product._id
-
-  form(action="/cart/add/", method="post")
-    input(type="hidden", name="productId", value=product._id)
-    button(type="submit") Agregar al carrito
+  section.detail
+    div(style="display: flex; flex-direction: column; justify-content: center; align-items: center;")
+      h1= product.name
+      img(src=product.img)
+    div.description
+      span.tag= product.category
+      p= product.desc
+      p $#{product.price}.00 MXN
+      form(action="/cart/add/", method="post")
+        input(type="hidden", name="productId", value=product._id)
+        button.call-to-action(type="submit") Agregar al carrito

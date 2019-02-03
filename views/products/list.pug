@@ -1,15 +1,21 @@
 extends ../layout.pug
 
 block content 
-  h2 Stickets mexicanos
+  h1.title Stickers
   if search
     h3 Resultados de la búsqueda #{searched}
   if filter
     h3 Resultados del filtro #{filtered}
-  each product in products
-    -var productId = product._id
-    div
-      a(href=`/products/detail/${productId}`) #{product.name}
+  section.list
+    each product in products
+      -var productId = product._id
+      a(href=`/products/detail/${productId}`) 
+        .card
+          img(style="width:100px; height: 100px;",src=product.img, alt=product.name)
+          p= product.name
+          form(action="/cart/add/", method="post")
+            input(type="hidden", name="productId", value=product._id)
+            button(type="submit") Agregar al carrito
   
   
   h3 Filtrar por

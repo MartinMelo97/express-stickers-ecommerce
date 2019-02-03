@@ -1,38 +1,32 @@
-@import url('https://fonts.googleapis.com/css?family=Cinzel');
-
+@import url("https://fonts.googleapis.com/css?family=Cinzel");
 body {
   padding: 0px;
   margin: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 html {
-  margin: 0;
-}
+  margin: 0; }
 
 .cover {
-  background-image: url('https://images.pexels.com/photos/159195/hacker-internet-technology-computers-159195.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-image: url("https://images.pexels.com/photos/159195/hacker-internet-technology-computers-159195.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-position: center;
-  //background-color: rgba(0,0,0,0.5);
-  background-size: cover;  
+  background-size: cover;
   color: white;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Cinzel', serif;
-  p {
+  font-family: 'Cinzel', serif; }
+  .cover p {
     /*position: absolute;
     top:0;
     right: 0;
     left:0;*/
     font-size: 3rem;
-    font-weight: 700;
-  }
-}
+    font-weight: 700; }
 
-.call-to-action{
+.call-to-action {
   width: 30vw;
   height: 10vh;
   background: linear-gradient(to right, red, orange);
@@ -40,117 +34,92 @@ html {
   color: white;
   font-size: 1.5rem;
   border-radius: 10px;
-  transition: 0.5s ease;
-  &:hover{
+  transition: 0.5s ease; }
+  .call-to-action:hover {
     transform: scale(1.2);
     cursor: pointer;
-    background: linear-gradient(to right, orange, red);
-  }
-}
+    background: linear-gradient(to right, orange, red); }
 
 a {
   color: orange;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
-
-
-//LIST PRODUCTS
-
-.list{
+.list {
   display: flex;
   justify-content: space-around;
-  flex-wrap: wrap;
-}
+  flex-wrap: wrap; }
 
-.card{
+.card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
+  align-items: center; }
 
-.title{
-  margin: 50px;
-}
+.title {
+  margin: 50px; }
 
-//DETAIL
-.detail{
+.detail {
   display: flex;
   justify-content: center;
-  align-items: center;
-}
+  align-items: center; }
 
-.tag{
+.tag {
   font-size: 15px;
   cursor: pointer;
   background-color: black;
-  color: white;
-}
+  color: white; }
 
 .description {
-  margin-left: 20px;
-}
+  margin-left: 20px; }
 
-.table{
+.table {
   display: flex;
   width: 100vw;
   justify-content: space-around;
-  align-items: center;
-}
+  align-items: center; }
 
-.items{
+.items {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-}
+  justify-content: space-around; }
 
-.esquina{
+.esquina {
   float: right;
-  margin: 20px;
-}
+  margin: 20px; }
 
-
-.bote{
+.bote {
   color: orange;
-  transition:  0.3s ease;
-  &:hover{
-    transform: scale(1.5);
-  }
-}
+  transition: 0.3s ease; }
+  .bote:hover {
+    transform: scale(1.5); }
 
-.nav{
+.nav {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid black;
   height: 50px;
-  align-items: center;
-}
+  align-items: center; }
 
 .links {
   margin-right: 20px;
   display: flex;
-  justify-content: center;
-}
+  justify-content: center; }
 
 .cart {
   color: orange;
   margin-left: 10px;
-  font-size: 1.2rem;  
+  font-size: 1.2rem;
   position: relative;
-  transition: 0.3s ease-in;
-  &:hover {
-    transform: scale(1.5);
-  }
-  
-}
+  transition: 0.3s ease-in; }
+  .cart:hover {
+    transform: scale(1.5); }
 
-i span{
+i span {
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  top:-2px;
-  right:0;
+  top: -2px;
+  right: 0;
   color: black;
   font-size: 7px;
   background-color: black;
@@ -158,36 +127,28 @@ i span{
   border-radius: 50px;
   width: 10px;
   height: 10px;
-  font-family: Avenir;
-}
+  font-family: Avenir; }
 
-
-//checkout
-.checkout{
-
-  display: flex;
-
-  div {
+.checkout {
+  display: flex; }
+  .checkout div {
     width: 50%;
     padding: 7%;
-    height: 100vh;
-  }
-}
+    height: 100vh; }
 
 .btn-container {
   display: flex;
   border: 1px solid gray;
   justify-content: center;
-  align-items: center;
-}
+  align-items: center; }
 
 .btn-paypal {
   background-color: #ffc439;
   border: none;
   padding: 5%;
-  width: 50%;
-}
+  width: 50%; }
 
 .items-container {
-  background-color: lightgray;
-}
+  background-color: lightgray; }
+
+/*# sourceMappingURL=style.css.map */

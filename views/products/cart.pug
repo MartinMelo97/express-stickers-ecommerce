@@ -1,17 +1,26 @@
 extends ../layout.pug
 
 block content
-  div(style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;")
-      h3 Nombre
+  h1.title Shopping Cart
+  div.table
       h3 Imagen
+      h3 Nombre
       h3 Precio Unitario
       h3 Cantidad
       h3 Subtotal
-  each product in products
-    div(style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;")
-      h4= product.product.name
-      img(src=product.product.img, alt=product.product.name, style="width: 100px; height: 100px;")
-      p $#{product.product.price}
-      p= product.quantity
-      p $#{product.subtotal}
+  article
+    each product in products
+      div.table
+        img(src=product.product.img, alt=product.product.name, style="width: 100px; height: 100px;")
+        h4= product.product.name
+        p $#{product.product.price}
+        form(action="/cart/add", method="post")
+          input(type="number", name="quantity", value=product.quantity)
+          input(type="hidden", name="productId", value=productId)
+          input(type="submit", value="Actualizar")
+        p $#{product.subtotal}
+        i.far.fa-trash-alt.bote
     
+  a(href="/checkout")
+    button.call-to-action.esquina Pagar
+    h3.esquina $#{total}.00 MXN

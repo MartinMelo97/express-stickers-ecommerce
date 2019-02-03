@@ -55,8 +55,9 @@ app.locals.cart = {}
 const index = require('./routes/index');
 const products = require('./routes/products');
 const cart_url = require('./routes/cart');
+const checkout_url = require('./routes/checkout')
 app.use('/', index);
 app.use('/products', products)
 app.use('/cart', cart_url)
-
+app.use('/checkout', checkout_url)
 module.exports = app;
